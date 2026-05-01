@@ -1,0 +1,384 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Poppins', sans-serif; /* Mas modernong font pairing */
+}
+
+body.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow: hidden;
+    /* Mas malalim na overlay para lumutang ang box */
+    background: 
+        linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)),
+        url("bg2.png") center center/cover no-repeat;
+    position: relative;
+}
+
+/* Subtle Animated Background Overlay */
+.login-overlay {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(14, 165, 164, 0.15), transparent),
+                radial-gradient(circle at bottom left, rgba(37, 51, 81, 0.2), transparent);
+    z-index: 0;
+}
+
+.login-container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 400px; /* Mas compact para sa modern look */
+    animation: fadeInScale 0.5s ease-out;
+}
+
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.login-box {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 24px;
+    padding: 40px 32px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Logo Styling */
+.login-logo {
+    width: 88px;
+    height: 88px;
+    object-fit: cover;
+    border-radius: 22px; /* Squircle look para sa modern UI */
+    margin: 0 auto 20px;
+    display: block;
+    border: 2px solid #f3f4f6;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    background: #fff;
+}
+
+.login-box h2 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #1e293b;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+}
+
+.login-subtitle {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 30px;
+}
+
+/* Form Elements */
+.login-page form {
+    text-align: left;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 8px;
+    margin-left: 4px;
+}
+
+.login-page .input-group input {
+    width: 100%;
+    padding: 12px 16px;
+    height: 50px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    outline: none;
+    font-size: 15px;
+    background: #f8fafc;
+    color: #1e293b;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.login-page .input-group input:focus {
+    background: #fff;
+    border-color: #0ea5a4;
+    box-shadow: 0 0 0 4px rgba(14, 165, 164, 0.1);
+}
+
+.login-page .input-group input::placeholder {
+    color: #94a3b8;
+}
+
+/* Password Toggle Area */
+.show-pass {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13.5px;
+    color: #64748b;
+    margin-top: 12px;
+    margin-bottom: 24px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.show-pass:hover {
+    color: #1e293b;
+}
+
+.show-pass input {
+    width: 18px !important;
+    height: 18px !important;
+    accent-color: #0ea5a4;
+    cursor: pointer;
+}
+
+/* Button Styling */
+.login-page .login-button {
+    width: 100%;
+    height: 52px;
+    background: #0ea5a4; /* Solid primary color */
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(14, 165, 164, 0.2);
+}
+
+.login-page .login-button:hover {
+    background: #0d9488;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(14, 165, 164, 0.3);
+}
+
+.login-page .login-button:active {
+    transform: translateY(0);
+}
+
+/* Error Message */
+.error {
+    background: #fff1f2;
+    color: #e11d48;
+    border: 1px solid #ffe4e6;
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+    .login-box {
+        padding: 32px 24px;
+        border-radius: 20px;
+    }
+    
+    .login-box h2 {
+        font-size: 22px;
+    }
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#eef2f7;
+    color:#1f2937;
+}
+
+a{
+    text-decoration:none;
+}
+
+:root {
+    --bg-color: #1a192b;          /* Main dark background */
+    --sidebar-color: #242333;     /* Sidebar background */
+    --card-bg: #2d2b42;           /* Table and card background */
+    --accent-purple: #7367f0;     /* Vibrant purple for buttons/active links */
+    --text-primary: #cfcde4;      /* Light grey text */
+    --text-muted: #828096;        /* Muted text for headers */
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    margin: 0;
+    display: flex;
+    min-height: 100vh; /* Siguradong abot hanggang baba ang kulay */
+    overflow-x: hidden;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 260px;
+    background-color: var(--sidebar-color);
+    padding: 30px 20px;
+    position: fixed; /* Naka-fix sa kaliwa */
+    top: 0;
+    left: 0;
+    bottom: 0;
+    box-shadow: 4px 0 10px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+
+.sidebar h2 {
+    color: var(--white);
+    margin-bottom: 40px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar nav a {
+    display: block;
+    padding: 12px 15px;
+    color: var(--text-muted);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.sidebar nav a:hover, .sidebar nav a.active {
+    background-color: var(--accent-purple);
+    color: var(--white);
+    box-shadow: 0 4px 15px rgba(115, 103, 240, 0.4);
+}
+
+/* Main Content Area */
+.main-content {
+    margin-left: 260px; /* Pantay sa width ng sidebar */
+    padding: 40px;
+    flex-grow: 1; /* Punuin ang natitirang space */
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding-bottom: 15px;
+}
+
+h1 {
+    color: var(--white);
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+/* Modern Card & Table Container */
+.content-wrapper {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.content-wrapper h3 {
+    color: var(--white);
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    color: var(--text-muted);
+    font-weight: 500;
+    padding: 15px;
+    border-bottom: 2px solid rgba(255,255,255,0.05);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.9rem;
+}
+
+tr:hover {
+    background-color: rgba(255,255,255,0.02);
+}
+
+/* Form Elements */
+input, select {
+    background-color: #3b3952;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--white);
+    padding: 12px;
+    border-radius: 8px;
+    width: 100%;
+    margin-bottom: 15px;
+    outline: none;
+}
+
+input:focus {
+    border-color: var(--accent-purple);
+}
+
+.btn-submit {
+    background-color: var(--accent-purple);
+    color: var(--white);
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.btn-submit:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
